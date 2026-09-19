@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#09061b" />
+    <title>Nightfall Duel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div class="brand"><span class="brand-star">✦</span><span>NIGHTFALL</span><small>DUEL</small></div>
+        <div class="round-readout"><span id="mapName">Orbit Orchard</span><em id="turnText">PLAYER ONE'S TURN</em></div>
+        <button id="soundButton" class="icon-button" aria-label="Toggle sound">◖</button>
+      </header>
+
+      <section class="game-grid">
+        <aside class="player-card cyan active" id="playerOneCard">
+          <div class="player-mark">01</div><p>PLAYER ONE</p><strong id="p1Score">000000</strong>
+          <div class="balls"><span>ORBITS</span><b id="p1Balls">05</b></div>
+          <div class="meter"><i id="p1Meter"></i></div>
+        </aside>
+
+        <section class="board-wrap">
+          <canvas id="game" width="840" height="740" aria-label="Nightfall Duel game board"></canvas>
+          <div id="startOverlay" class="overlay"><div class="overlay-card"><span>✦</span><h1>Nightfall Duel</h1><p>A cosmic, local two-player peg battle.</p><button id="startButton">START DUEL</button><small>Drag from the launch star to aim · release to fire</small></div></div>
+          <div id="resultOverlay" class="overlay hidden"><div class="overlay-card"><span id="resultIcon">✦</span><h1 id="resultTitle">PLAYER ONE WINS</h1><p id="resultDetail">A dazzling finish.</p><button id="rematchButton">REMATCH</button><button id="mapsButton" class="secondary">CHOOSE ANOTHER MAP</button></div></div>
+        </section>
+
+        <aside class="player-card coral" id="playerTwoCard">
+          <div class="player-mark">02</div><p>PLAYER TWO</p><strong id="p2Score">000000</strong>
+          <div class="balls"><span>ORBITS</span><b id="p2Balls">05</b></div>
+          <div class="meter"><i id="p2Meter"></i></div>
+        </aside>
+      </section>
+
+      <section class="bottom-panel">
+        <div class="legend"><span><i class="dot cyan-dot"></i> standard</span><span><i class="dot gold-dot"></i> star peg ×2</span><span><i class="dot violet-dot"></i> warp peg</span></div>
+        <div id="mapSelect" class="map-select" aria-label="Select arena"></div>
+        <button id="newGameButton" class="text-button">NEW DUEL</button>
+      </section>
+    </main>
+    <script src="game.js"></script>
+  </body>
+</html>
+
